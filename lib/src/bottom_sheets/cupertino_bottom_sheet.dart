@@ -22,8 +22,8 @@ import '../bottom_sheet_route.dart';
 const double _kPreviousPageVisibleOffset = 10;
 
 const Radius _kDefaultTopRadius = Radius.circular(12);
-const BoxShadow _kDefaultBoxShadow =
-    BoxShadow(blurRadius: 10, color: Colors.black12, spreadRadius: 5);
+// const BoxShadow _kDefaultBoxShadow =
+//     BoxShadow(blurRadius: 10, color: Colors.black12, spreadRadius: 5);
 
 /// Cupertino Bottom Sheet Container
 ///
@@ -49,8 +49,8 @@ class _CupertinoBottomSheetContainer extends StatelessWidget {
     final topSafeAreaPadding = MediaQuery.of(context).padding.top;
     final topPadding = _kPreviousPageVisibleOffset + topSafeAreaPadding;
 
-    final _shadow = shadow ?? _kDefaultBoxShadow;
-    BoxShadow(blurRadius: 10, color: Colors.black12, spreadRadius: 5);
+    // final _shadow = shadow ?? _kDefaultBoxShadow;
+    // BoxShadow(blurRadius: 10, color: Colors.black12, spreadRadius: 5);
     final _backgroundColor =
         backgroundColor ?? CupertinoTheme.of(context).scaffoldBackgroundColor;
     return Padding(
@@ -59,8 +59,9 @@ class _CupertinoBottomSheetContainer extends StatelessWidget {
         clipBehavior: Clip.hardEdge,
         borderRadius: BorderRadius.vertical(top: topRadius),
         child: Container(
-          decoration:
-              BoxDecoration(color: _backgroundColor, boxShadow: [_shadow]),
+          decoration: BoxDecoration(
+            color: _backgroundColor,
+          ),
           width: double.infinity,
           child: MediaQuery.removePadding(
             context: context,
@@ -145,7 +146,7 @@ class CupertinoModalBottomSheetRoute<T> extends ModalBottomSheetRoute<T> {
 
   final Curve? previousRouteAnimationCurve;
 
-  final BoxShadow? boxShadow;
+  // final BoxShadow? boxShadow;
 
   // Background color behind all routes
   // Black by default
@@ -169,7 +170,7 @@ class CupertinoModalBottomSheetRoute<T> extends ModalBottomSheetRoute<T> {
     Duration? duration,
     RouteSettings? settings,
     ScrollController? scrollController,
-    this.boxShadow = _kDefaultBoxShadow,
+    // this.boxShadow = _kDefaultBoxShadow,
     this.transitionBackgroundColor,
     this.topRadius = _kDefaultTopRadius,
     this.previousRouteAnimationCurve,
